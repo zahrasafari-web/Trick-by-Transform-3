@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .box{
+            width: 400px;
+            height: 400px;
+            margin: 100px auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .box>div{
+            width: 50%;
+            height: 50%;
+            border: 1px solid black;
+            background-image: url(asset/img/2c4460fa-97e8-4655-99ab-a770b0398a14.png);
+            /* background-size: 400px auto; */
+            transition: 1s;
+        }
+        .box>div::before{
+            content: '';
+            display: flex;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(17, 17, 17, 0.808);
+            transition: 1s;
+        }
+        .box>div:nth-of-type(1){
+            transform: translate(-20px, -20px);
+        }
+        .box>div:nth-of-type(2){
+            background-position: -200px 0px;
+            transform: translate(40px, -30px);
+        }
+        .box>div:nth-of-type(3){
+            background-position: 0 -200px;
+            transform: translate(-40px, 30px);
+        }
+        .box>div:nth-of-type(4){
+            background-position: -200px -200px;
+            transform: translate(40px, 30px);
+
+        }
+        .box:hover>div{
+            transform: translate(0 , 0);
+        }
+        .box:hover>div::before{
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>
